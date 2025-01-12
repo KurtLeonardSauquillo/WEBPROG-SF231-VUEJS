@@ -63,8 +63,20 @@
       border-radius: 10px;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .gallery-images img, .gallery-image {
+      max-width: 150px;
+      height: auto;
+      margin: 10px; /* Add spacing between images */
+    }
+
     .gallery {
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(128, 128, 128, 0.5); /* Greyish transparent background */
       padding: 20px;
       border-radius: 10px;
       text-align: center;
@@ -99,9 +111,23 @@
       background-color: rgba(255, 255, 255, 0.8);
     }
 
+    @media (max-width: 1024px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-images img {
+        max-width: 120px; /* Smaller images on tablet view */
+      }
+    }
+
     @media (max-width: 768px) {
       main {
         grid-template-columns: 1fr;
+      }
+
+      .gallery-images img {
+        max-width: 100px; /* Smaller images on mobile view */
       }
     }
   </style>
@@ -117,7 +143,7 @@
     <main>
       <section class="section">
         <a href="https://imgbb.com/" target="_blank">
-          <img src="https://i.ibb.co/FYsVTdG/cat.jpg" alt="cat">
+          <img class="gallery-image" src="https://i.ibb.co/FYsVTdG/cat.jpg" alt="cat">
         </a>
         <div>
           <h2>About Me</h2>
@@ -200,4 +226,3 @@
   <script src="js/shopping.js"></script>
 </body>
 </html>
-
