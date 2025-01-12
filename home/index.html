@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Profile Web Page</title>
-  <link rel="stylesheet" href="css/pink.css?version=0.1">
-  <link rel="stylesheet" href="css/images.css?version=0.1">
-  <link rel="stylesheet" href="css/shopping.css?version=0.1">
-  <link rel="stylesheet" href="css/flexbox.css?version=0.1">
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/shopping.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -69,39 +71,17 @@
       border-radius: 10px;
     }
 
-    .gallery-images img, .gallery-image {
+    .gallery-images img {
       max-width: 150px;
       height: auto;
-      margin: 10px; /* Add spacing between images */
+      margin: 10px;
     }
 
     .gallery {
-      background-color: rgba(128, 128, 128, 0.5); /* Greyish transparent background */
+      background-color: rgba(128, 128, 128, 0.5);
       padding: 20px;
       border-radius: 10px;
       text-align: center;
-    }
-
-    .gallery h2 {
-      margin-bottom: 20px;
-    }
-
-    hr {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-    h1, h2 {
-      text-align: center;
-    }
-
-    p, ul, ol {
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .fun-fact {
-      margin-top: 20px;
     }
 
     footer {
@@ -110,31 +90,11 @@
       padding: 20px;
       background-color: rgba(255, 255, 255, 0.8);
     }
-
-    @media (max-width: 1024px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-images img {
-        max-width: 120px; /* Smaller images on tablet view */
-      }
-    }
-
-    @media (max-width: 768px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-images img {
-        max-width: 100px; /* Smaller images on mobile view */
-      }
-    }
   </style>
 </head>
 <body>
   <div class="overlay"></div>
-  
+
   <div class="container">
     <header>
       <h1>Personal Profile</h1>
@@ -142,87 +102,39 @@
 
     <main>
       <section class="section">
-        <a href="https://imgbb.com/" target="_blank">
-          <img class="gallery-image" src="https://i.ibb.co/FYsVTdG/cat.jpg" alt="cat">
-        </a>
-        <div>
-          <h2>About Me</h2>
-          <p>
-            Hello! My name is Kurt Leonard A. Sauquillo. My name is Kurt, my friends call me by initials KL, I enjoy listening to music and playing instruments,
-            as well as playing video games. I mainly play League of Legends at the moment but I used to play games like Valorant, Overwatch 2, etc.
-          </p>
-          <div class="fun-fact">
-            <h3>Fun Fact</h3>
-            <p>Meow</p>
-          </div>
+        <h2>About Me</h2>
+        <p>Hello! My name is Kurt Leonard A. Sauquillo...</p>
+        <div id="app">
+          <p>{{ message }}</p>
         </div>
       </section>
 
       <section class="section">
-        <h2>Education & Achievements</h2>
-        <p>
-          I went to Sto Niño Catholic School for my Junior and Senior High School. I am currently at Asia Pacific College.
-        </p>
+        <h2>Food List</h2>
+        <div id="app2">
+          <ul>
+            <li v-for="food in manyFoods" :key="food.name">
+              <img :src="food.url" :alt="food.name">
+              <p>{{ food.name }}</p>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section class="section">
-        <h2>Course</h2>
-        <p>
-          3rd year I.T Student specializing in Mobile and Internet Technologies at Asia Pacific College.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2>IT Experience</h2>
-        <p>Things I have done related to I.T so far:</p>
-        <ol>
-          <li>I built my own PC from scratch.</li>
-          <li>Created an Arduino Project that can detect doors opening and closing using a motion sensor.</li>
-          <li>Troubleshooting my PC xD.</li>
-        </ol>
-      </section>
-
-      <section class="section">
-        <h2>Hobbies & Interests</h2>
-        <ul>
-          <li>Gaming</li>
-          <li>Not Coding</li>
-          <li>Listening to Music</li>
-          <li>Playing instruments</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>Goals in Life</h2>
-        <p>
-          My goal is to graduate college and be done studying so I can finally get a job and get paid money. I also want to travel to different countries.
-          The countries I want to visit are Japan, Jamaica, Thailand, and Korea.
-        </p>
+        <h2>Shopping List</h2>
+        <div id="app3">
+          <ul>
+            <li v-for="item in shoppingList" :key="item.name">
+              <p>{{ item.name }} ({{ item.number }})</p>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
 
-    <section class="gallery">
-      <h2>Picture Gallery</h2>
-      <p> Me fr</p>
-      <div class="gallery-images">
-        <a href="https://ibb.co/2Ymj61B">
-          <img src="https://i.ibb.co/Hp1r2fQ/me-fr.jpg" alt="me-fr">
-        </a>
-        <a href="https://imgbb.com/">
-          <img src="https://i.ibb.co/fGLxq34/sonic.jpg" alt="sonic">
-        </a>
-        <a href="https://ibb.co/s1qHk29">
-          <img src="https://i.ibb.co/7pK48Xt/kobe.jpg" alt="kobe">
-        </a>
-      </div>
-    </section>
-
-    <footer> APC WEBPROG </footer>
+    <footer>APC WEBPROG</footer>
   </div>
-
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="js/vue.js"></script>
-  <script src="js/images.js"></script>
-  <script src="js/shopping.js"></script>
 </body>
 </html>
+
