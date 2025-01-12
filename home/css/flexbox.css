@@ -1,0 +1,50 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 20px; /* Space between items */
+}
+
+/* For centering items */
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* For space-around layout */
+.flex-space-around {
+  justify-content: space-around;
+}
+
+/* For space-between layout */
+.flex-space-between {
+  justify-content: space-between;
+}
+
+/* For wrapping content */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* Child item styles */
+.flex-item {
+  background-color: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.flex-item img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
