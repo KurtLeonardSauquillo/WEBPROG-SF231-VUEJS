@@ -1,13 +1,3 @@
-<script></script>
- 
-<template>
-
-<h1> Hello WEBPROG SF231 World </h1>
-
-</template>
- 
-<style></style>
-
 <template>
     <h1>Food</h1>
     <food-item/>
