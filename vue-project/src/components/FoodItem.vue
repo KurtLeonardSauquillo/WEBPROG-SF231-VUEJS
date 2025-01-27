@@ -1,29 +1,23 @@
 <template>
-    <div class="apple">
-      <h2>{{ name }}</h2>  
-      <p>{{ message }}</p>
+    <div class ="apple">
+        <h2>{{ name }}</h2>
+        <p>{{ message }}</p>
     </div>
-  </template>
-  
-  <script>
-  export default {
+</template>
+
+<script>
+export default {
     data() {
-      return {
-        name: 'Apples',
-        message: 'I like apples',
-        clicks: 0
-      }
-    },
-    methods: {
-      countClicks() {
-        this.clicks++;
-      }
+        return {
+            name: 'Apple',
+            message: 'I like Apples'
+        }
     }
-  }
-  </script>
-  
-  <style>
-  .apple {
+};
+</script>
+
+<style>
+  .mango {
     border: dashed black 1px;
     display: inline-block;
     margin: 10px;
@@ -31,4 +25,4 @@
     background-color: lightgreen;
   }
 
-  </style>
+</style>   
