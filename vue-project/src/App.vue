@@ -20,11 +20,13 @@ onMounted(() => {
 <ul>
   <li v-for="instrument in instruments" :key="instrument.id">{{ instrument.name }}</li>
 </ul>
-    <h1>Food</h1>
+    <h1>Instruments</h1>
     <personal-profile/> <br>
     <food-item/> 
     <food-item2/> 
-    <food-item/>  
+    <food-item/>
+    <comment-form/>
+    <comment/>  
   </template>
 
 
