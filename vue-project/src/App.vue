@@ -25,8 +25,12 @@ onMounted(() => {
     <food-item/> 
     <food-item2/> 
     <food-item/>
+    <comment/> 
     <comment-form/>
-    <comment/>  
+   
+    
+    
+
   </template>
 
 
