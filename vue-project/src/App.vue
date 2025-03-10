@@ -4,6 +4,7 @@
     <food-item/> 
     <food-item2/> 
     <food-item/>  
+    <rest-api/>
   </template>
 
 
